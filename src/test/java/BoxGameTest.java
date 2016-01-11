@@ -12,7 +12,6 @@ public class BoxGameTest {
         Player Tom=new Player(001,"Tom",100,10);
         Player Mary=new Player(002,"Mary",1000,10);
         BoxGame box=new BoxGame();
-        box.gameResult(Tom,Mary);
-        assertThat(box.getWinner().getName(),is("Mary"));
+        assertThat(box.gameResult(Tom,Mary),is("Tom被打败了。"));
     }
 }
