@@ -6,10 +6,10 @@ import java.util.Random;
 public class BoxGame {
     private Player winner;
     private Player loser;
-    public String gameResult(Player A, Player B){
-        Player beginPlayer;
-        Player followPlayer;
-        Player forChange;
+    public String gameResult(Career A, Career B){
+        Career beginPlayer;
+        Career followPlayer;
+        Career forChange;
         Random random = new Random();
         Integer randomBegin=(int)(Math.random()*2);
 
@@ -24,8 +24,9 @@ public class BoxGame {
 
         while (beginPlayer.getBlood()>0&&followPlayer.getBlood()>0){
             beginPlayer.attack(followPlayer);
-            System.out.println(beginPlayer.getName()+"攻击了"+followPlayer.getName()+","
-                    +followPlayer.getName()+ "受到了"+beginPlayer.getAtk()+"点伤害,"
+            System.out.println(beginPlayer.getCareerName()+beginPlayer.getName()+beginPlayer.getWeapon().attackWeapon()
+                    +"攻击了"+followPlayer.getCareerName()+followPlayer.getName()+","
+                    +followPlayer.getName()+ "受到了"+(beginPlayer.getFinalAtk()-followPlayer.getDenfense())+"点伤害,"
                     +followPlayer.getName()+"剩余生命："+followPlayer.getBlood()+".");
             forChange=beginPlayer;
             beginPlayer=followPlayer;

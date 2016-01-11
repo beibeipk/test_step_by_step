@@ -5,17 +5,13 @@ public class Player {
     private Integer id;
     private String name;
     private Integer blood;
-    private Integer atk;
+    private Integer originAtk;
 
-    public Player(Integer id, String name,Integer blood, Integer atk) {
+    public Player(Integer id, String name,Integer blood, Integer originAtk) {
         this.id = id;
         this.name = name;
         this.blood=blood;
-        this.atk = atk;
-    }
-
-    public Integer getAtk() {
-        return atk;
+        this.originAtk = originAtk;
     }
 
     public String getName() {
@@ -26,15 +22,19 @@ public class Player {
         return blood;
     }
 
-    private void setBlood(Integer Blood) {
+    public void setBlood(Integer Blood) {
         blood=Blood;
     }
 
     public void attack(Player enemy){
-        enemy.setBlood(enemy.getBlood()-getAtk());
+        enemy.setBlood(enemy.getBlood()-getOriginAtk());
     }
 
     public Integer getId() {
         return id;
+    }
+
+    public Integer getOriginAtk() {
+        return originAtk;
     }
 }
