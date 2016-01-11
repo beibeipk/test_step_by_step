@@ -8,10 +8,19 @@ import static org.junit.Assert.assertThat;
  */
 public class StudentTest {
     @Test
-    public void student_test(){
-        Student student = new Student("Tom",21,2);
-        assertThat(student.getName(),is("Tom"));
-        assertThat(student.getAge(),is(21));
-        assertThat(student.introduce(),is("My name is Tom. I am 21 years old. I am a Student. I am at Class 2."));
+    public void student_leader_test(){
+        Klass klass=new Klass(2);
+        Student Tom = new Student(001,"Tom",21,klass);
+        klass.assignLeader(Tom);
+        assertThat(Tom.introduce(),is("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2."));
+    }
+
+    @Test
+    public void student_nonleader_test(){
+        Klass klass=new Klass(2);
+        Student Tom = new Student(001,"Tom",21,klass);
+        Student Jerry = new Student(002,"Jerry",12,klass);
+        klass.assignLeader(Jerry);
+        assertThat(Tom.introduce(),is("My name is Tom. I am 21 years old. I am a Student. I am at Class 2."));
     }
 }

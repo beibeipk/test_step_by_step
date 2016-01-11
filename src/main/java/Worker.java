@@ -3,7 +3,7 @@
  */
 public class Worker extends Person {
 
-    public Worker(String name, Integer age) {
+    public Worker(Integer id,String name, Integer age) {
         super(id, name, age);
     }
 

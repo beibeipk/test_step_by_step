@@ -10,7 +10,7 @@ import static org.mockito.Mockito.mock;
 public class PersonTest {
     @Test
     public void person_test(){
-        Person person = new Person(id, "Tom",21);
+        Person person = new Person(001, "Tom",21);
         assertThat(person.getName(),is("Tom"));
         assertThat(person.getAge(),is(21));
         assertThat(person.introduce(),is("My name is Tom. I am 21 years old."));
