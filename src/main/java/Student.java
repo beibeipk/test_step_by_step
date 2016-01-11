@@ -8,8 +8,8 @@ public class Student extends Person{
     }
     private Klass klass;
 
-    public Integer getKlass() {
-        return klass.getNumber();
+    public Klass getKlass() {
+        return klass;
     }
 
     public String introduce(){
@@ -21,5 +21,15 @@ public class Student extends Person{
             status="at";
         }
         return (super.introduce()+" I am a Student. I am "+status+" Class "+getKlass()+".");
+    }
+    public boolean leaderStatus(){
+        boolean status;
+        if(getId()==klass.getLeader().getId()){
+            status=true;
+        }
+        else {
+            status=false;
+        }
+        return status;
     }
 }

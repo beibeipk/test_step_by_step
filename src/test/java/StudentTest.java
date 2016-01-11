@@ -29,6 +29,9 @@ public class StudentTest {
         Klass klass=new Klass(2);
         Klass klass_1=new Klass(1);
         Student Tom = new Student(001,"Tom",21,klass);
+        Student Jerry = new Student(002,"Jerry",12,klass);
+        klass.assignLeader(Jerry);
         assertThat(klass_1.appendMember(Tom),is("It is not one of us."));
+        assertThat(Tom.introduce(),is("My name is Tom. I am 21 years old. I am a Student. I am at Class 2."));
     }
 }

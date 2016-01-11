@@ -25,12 +25,21 @@ public class Klass {
 
 
     public String appendMember(Student student){
-        if(student.getKlass()==getNumber()){
+        if(student.getKlass().getNumber()==getNumber()){
             this.member=student;
             return null;
         }
         else {
             return ("It is not one of us.");
+        }
+    }
+
+    public boolean isIn(Student student){
+        if(student.getKlass().getNumber()==getNumber()){
+            return true;
+        }
+        else {
+            return false;
         }
     }
 }
