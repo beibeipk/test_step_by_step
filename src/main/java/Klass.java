@@ -4,6 +4,7 @@
 public class Klass {
     private Integer number;
     private Student leader;
+    private Student member;
 
     public Klass(Integer number) {
         this.number = number;
@@ -23,4 +24,13 @@ public class Klass {
     }
 
 
+    public String appendMember(Student student){
+        if(student.getKlass()==getNumber()){
+            this.member=student;
+            return null;
+        }
+        else {
+            return ("It is not one of us.");
+        }
+    }
 }
